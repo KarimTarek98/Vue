@@ -15,6 +15,9 @@
         <p>You are {{ isSubscribed ? 'Subscribed' : 'Not Subscribed' }}</p>
         <p>Your first test name is : {{ completedTests[0].testName }}</p>
         <p>Your first test result is : {{ completedTests[0].testResult }}</p>
+        <p>{{ yourAgeInDays() }}</p>
+        <p>{{ date }}</p>
+        <button @click='newDate()'>Click to show new date</button>
     </div>
     <script src="js/vue.js"></script>
     <script>
@@ -34,7 +37,16 @@
                 }, {
                     testName: 'Math',
                     testResult: '69%'
-                }]
+                }],
+                date: 'Today'
+            },
+            methods: {
+                yourAgeInDays: function() {
+                    return "My age in days is : " + this.age * 365 + " Day";
+                },
+                newDate: function() {
+                    this.date = Date();
+                }
             }
         })
     </script>
