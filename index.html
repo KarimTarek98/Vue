@@ -10,14 +10,35 @@
     <div id="karim-app">
         <h1>Welcome to my app</h1>
         <p>Welcome {{ 'Mr ' + name }} we are happy to see you.</p>
-        <p v-html="title"></p>
+        <ul>
+            <li v-for="(skill,index) in skills">
+                {{index + 1}} => {{ skill }}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="test in tests">
+                {{ test.testName }} => {{ test.testResult }}
+            </li>
+        </ul>
     </div>
     <script src="js/vue.js"></script>
     <script>
         var vm = new Vue({
             el: "#karim-app",
             data: {
-                title: '<div class="rank"><h2>Noob</h2></div>'
+                name: 'Karim Tarek',
+                age: 20,
+                skills: ['HTML', 'CSS', 'Javacript', 'jQuery', 'Bootstrap', 'PHP', 'MySQL', 'OOP'],
+                tests: [{
+                    testName: 'Arabic',
+                    testResult: '72%'
+                }, {
+                    testName: 'English',
+                    testResult: '94%'
+                }, {
+                    testName: 'Physics',
+                    testResult: '81%'
+                }]
             }
         })
     </script>
