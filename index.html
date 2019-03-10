@@ -10,14 +10,14 @@
     <div id="karim-app">
         <h1>Welcome to my app</h1>
         <p>Welcome {{ 'Mr ' + name }} we are happy to see you.</p>
-        <p v-text=" 'Your name is ' + name "></p>
+        <p v-html="title"></p>
     </div>
     <script src="js/vue.js"></script>
     <script>
         var vm = new Vue({
             el: "#karim-app",
             data: {
-                name: 'Karim'
+                title: '<div class="rank"><h2>Noob</h2></div>'
             }
         })
     </script>
